@@ -1,0 +1,21 @@
+
+.body
+{
+    grid-template-columns: 500px;
+    margin: 0 auto;
+    display: grid;
+    border: 1px solid rgb(231, 188, 94);
+    max-width: 500px;    
+    grid-gap: 10px; 
+    
+}
+
+
+.grid
+{    
+    display: grid;
+    max-width: 310px;
+    grid-gap: 10px;
+    grid-template-columns: 200px 100px;
+    border: 1px solid rgb(231, 188, 94);
+}

@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+//npx prisma migrate dev
+
+
+model User {
+  user_id Int @id @default(autoincrement())
+  type String
+  name String
+  cpf_cnpj String
+  email String @unique
+  tel String 
+  purchase_order Purchase_Order[]
+}
+
+model Purchase_Order {
+  user User @relation(fields: [user_id], references: [user_id])
+  user_id Int
+  order_id Int @id @default(autoincrement()) 
+  cpf_cnpj String
+  itens Json?
+}
